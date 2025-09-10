@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+body{
+    width: 100%;
+    height: auto;
+    background-color:black;
+}
+
+.wrap{
+    max-width: 100%;
+    height: 600px;
+    background-image: url(hjk.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    max-width: 100%;
+    height: 250px;
+  }
+
+
+  .nav-heard{
+    width:100%;
+  }
+
+}
+.parlour{
+width: 100%;
+height: 100px;
+background-color: black;
+}
+.navbar-brand{
+width: 100%;
+height: 60px;
+background-color: rgb(8, 4, 1);
+position: fixed;
+top: 0;
+bottom: 0;
+z-index: 9999;
+opacity: 0.9;
+}
+
+.nav-heard{
+    width: 100%;
+    height: 60px;
+    background-color:gray;
+    transition: transform 0.4s ease;
+    
+}
+.nav-heard.hidden{
+    transform: translateY(-100%);
+}
+
+.navbar-menu a {
+    font-size: 1.3rem;
+    font-weight: lighter;
+    font-family: "Share Tech";
+    transition: 0.5s ease-in;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-menu a:hover{
+    transform: translate(6px);
+    color: yellow;
+    text-decoration: underline;
+    /* border-bottom: 1px solid white;
+    padding-bottom: 0; */
+}
+
+.title{
+    color: white;
+    position: relative;
+    text-align:center;
+    bottom:-30%;
+}
+
+@media screen and (max-width: 768px){
+    .title{
+        font-size: 1em;
+        height: 250px;
+        text-wrap:no-wrap;
+    }
+
+#mainNav.is-active .navbar-item{
+    background-color: #222;   /* dark background */
+    color: #fff;              /* white text */
+    font-size: 1.2rem;        /* larger text */
+    padding: 1rem;            /* more space around */
+    text-align: center; 
+}
+
+.lorem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.is-flex{
+    display: block;
+}
+.navbar-burger{
+    align-items: center;
+}
+.navbar-burger{
+    margin-right: 8rem;
+}
+/* .title{
+    width: fit-content;
+    position: absolute;
+    top: 25%;
+    left: 26%;
+    text-wrap: no-wrap;
+} */
+}
+
+
+
+
+
+
+.is-flex{
+    gap: 2rem;
+}
+
+.line{
+    border-left: 1px solid white;
+    height: 100px;
+}
+
+.lorem{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 7rem;
+}
+.lorem img{
+    max-width: 550px;
+    height: auto;
+}
+
+.det{
+    border:1px dotted white;
+    width: 500px;
+    height: 400px;
+
+}
+
+
+
+
+@media screen and (max-width: 420px){
+    .nav-heard{
+        width:100%;
+    }
+}
+
+
+.det >h2{
+    margin: 2rem 2rem;
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.det >p{
+    margin: 1em 2rem;
+}
+
+.det >button{
+    position: relative;
+    display: inline-block;
+    color: white;
+    padding: 12px 30px;
+    font-style: italic;
+    font-size: 1rem;
+    border: 1px solid white;
+    background: transparent;
+    cursor: pointer;
+    margin-left: 2rem;
+    width: 159px;
+    border-radius: 5px;
+}
+
+.det >button::after{
+    content: "";
+    position: absolute;
+    border: 1px dotted white;
+    pointer-events: none;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: -6px;
+    width: 170px;
+    transition:0.5s ease-out;
+}
+
+
+.det >button:hover::after{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(1px, 1px);
+    border: 1px dotted orangered;
+}
