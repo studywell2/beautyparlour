@@ -8,6 +8,7 @@
 body {
   background-color: black;
   font-family: "Share Tech", sans-serif;
+  overflow-x: hidden;
 }
 
 /* Hero Section */
@@ -151,6 +152,7 @@ body {
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.1);
   }
+  
 }
 
 /* Smaller screen wrap size */
@@ -170,11 +172,80 @@ body {
         width:300px;
         height: 300px;
      }
-}
+
+     .product p{
+      font-size: 12px;
+     }
+
+   .flexy {
+    flex-direction: column; /* stack items */
+    gap: 2rem;              /* smaller gap on mobile */
+    margin: 1em;            /* reduce margin for small screens */
+  }
+
+  .firsr span,
+  .secs span {
+    margin-left: 0;  /* reset margin so prices don’t push too far */
+  }
+.opps{
+  max-width: 100%;
+} /* make separator responsive */
+  
+}  
+
+     
+
 
 
 .is-flex{
     display: flex;
     gap: 2rem;
     justify-content: center;
+}
+
+
+
+.product{
+  text-align: center;
+  margin-top: 3rem;
+}
+
+
+.product h2{
+  font-size: 2rem;
+}
+
+.inline{
+  width: 100%;
+  margin-top: 1em;
+  border: 1px solid white;
+  opacity: 0.2;
+}
+
+
+.flexy{
+  display: flex;
+  gap: 4rem;
+  margin: 2em 4rem;
+}
+.firsr span{
+  margin-left: 19rem;
+}
+
+.firsr small{
+  color: gray;
+}
+.opps{
+  width: 400px;
+  border: 1px dotted white;
+  opacity: 0.3;
+}
+
+
+.secs span{
+  margin-left: 19rem;
+}
+
+.secs small{
+  color: gray;
 }
