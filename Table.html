@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title>Table</title>
+</head>
+<body>
+    <div id="app">
+    <ul>
+        <li v-for="post in posts" :key="post.id">{{post.body}}</li>
+    </ul>
+    <ol>
+        <li v-for="post in name" :key="post.id">{{post.title}}</li>
+    </ol>
+    <h3 >{{reveseMessage}}</h3>
+    </div>
+    
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Welcome',
+        posts: [
+            {id:1, tittle: 'post1', body: 'lorem5'},
+            {id:2, tittle: 'post2', body: 'lorem5'},
+            {id:3, tittle: 'post3', body: 'lorem5'},
+            {id:4, tittle: 'post4', body: 'lorem5'},
+            {id:5, tittle: 'post5', body: 'lorem5'},
+            {id:6, tittle: 'post6', body: 'lorem5'}
+        ],
+
+        name: [
+            {id:1, title: 'Shola'},
+            {id:2, title: 'Biodun'},
+            {id:3, title: 'Shade'},
+            {id:4, title: 'Tobi'},
+            {id:5, title: 'Abosede'},
+            {id:6, title: 'Daniel'},
+            {id:7, title: 'Adigun'}
+        ]
+        },
+
+        computed:{
+            reveseMessage(){
+                return this.message.split("").reverse('').join('');
+            }
+        }
+    })
+
+</script>
+</html>

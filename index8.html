@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title>Document</title>
+    <style>
+        .negative{
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:class="{negative: count < 0}">{{count}}</p>
+        <button v-on:click="increase">Increase</button>
+        <button @click="decrease">Decrease</button>
+    </div>
+</body>
+
+<script>
+    new Vue({
+      el: '#app',
+      data (){
+        return{
+            count:0
+        }
+      },
+      methods:{
+        increase(){
+            this.count++
+        },
+        decrease(){
+            this.count--
+        }
+      }
+    });
+</script>
+</html>

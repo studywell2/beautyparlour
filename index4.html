@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Hamburger Menu</title>
+  <style>
+    nav ul {
+      display: none;
+      list-style: none;
+      padding: 0;
+    }
+    nav ul.showMenu {
+      display: block;
+    }
+
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 4px;
+      background: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <nav :class="{'nav-open': isOpen}">
+      <button v-if="!isOpen" @click="toggleMenu" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+       
+
+       <button v-else @click="toggleMenu" class="hamburger">✖</button>
+      <ul :class="{'showMenu': isOpen}">
+        <li><a href="">About</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <form action="">
+        <input v-model="message" type="text">
+    </form>
+    {{message}}
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          isOpen: false,
+          message: '',
+        };
+      },
+      methods: {
+        toggleMenu() {
+          this.isOpen = !this.isOpen;
+        },
+      },
+    })
+  </script>
+</body>
+</html>
