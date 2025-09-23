@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Enter your To-do list</h1>
+<input type="text" id="inputtask" placeholder="To-do list">
+<button onclick="inputTas()">Submit</button>
+<ul id="task"></ul>
+</body>
+
+<script>
+   let taskinput = document.getElementById('inputtask');
+   let teasklist = document.getElementById('task');
+
+   function inputTas(){
+      let teaskts = taskinput.value.trim();
+
+      if (teaskts ==""){
+         alert('Please enter a task')
+      } else{
+         alert('Submitted succefully')
+      }
+  let li =document.createElement("li");
+  li.textContent = teaskts;
+
+
+  let deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "❌";
+  deleteBtn.style.marginLeft = "10px";
+  deleteBtn.onclick = function(){
+   li.remove();
+  };
+
+  li.appendChild(deleteBtn);
+
+  teasklist.appendChild(li);
+   taskinput.value = "";
+
+   }
+</script>
+</html>

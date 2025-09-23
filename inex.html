@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form id="myForm">
+    <label>Email:</label>
+    <input type="text" id="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="error" style="color:red;"></p>
+        <h1 id="count">0</h1>
+        <button onclick="increase()">Increase</button>
+        <button onclick="decrease()">Decrease</button>
+        <button onclick="reset()">Reset</button>
+
+
+
+
+  <form action="zero.php" method="post">
+  <input type="text" name="email" placeholder="Your Email">
+  <textarea name="message" placeholder="Message"></textarea>
+  <button type="submit">Send</button>
+</form>
+
+
+</body>
+<script>
+    let count =0;
+    const countElement = document.getElementById('count');
+
+    function increase(){
+        count++;
+        countElement.textContent =count;
+    }
+
+    function decrease(){
+        count--;
+        countElement.textContent = count;
+    }
+
+    function reset(){
+        count = 0;
+        countElement.textContent = count;
+    }
+
+
+
+
+     const form = document.getElementById("myForm");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const errorMsg = document.getElementById("error");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // stop page reload
+      let errors = [];
+
+      if (email.value === "" || !email.value.includes("@")) {
+        errors.push("Enter a valid email");
+      }
+
+      if (password.value.length < 6) {
+        errors.push("Password must be at least 6 characters");
+      }
+
+      if (errors.length > 0) {
+        errorMsg.textContent = errors.join(", ");
+      } else {
+        errorMsg.textContent = "";
+        alert("Form submitted successfully!");
+      }
+    });
+</script>
+</html>

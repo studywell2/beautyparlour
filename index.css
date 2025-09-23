@@ -130,6 +130,7 @@ body {
     border: 1px dotted rgb(255, 115, 0);
     border-radius: 2px;
 }
+
 /* ========== MOBILE STYLES ========== */
 @media screen and (max-width: 1023px) {
   /* Navbar menu drops down in column */
@@ -164,23 +165,23 @@ body {
   .title { font-size: 1rem; }
   .lorem { 
     flex-direction: column;
-     align-items: center;
-     }
+    align-items: center;
+  }
 
-     .lorem img{
-      width: 300px;
-        height: 200px;
-     }
-    .lorem .det{
-        width:300px;
-        height: 300px;
-     }
+  .lorem img{
+    width: 300px;
+    height: auto;
+  }
+  .lorem .det{
+    width:300px;
+    height: auto;
+  }
 
-     .product p{
-      font-size: 12px;
-     }
+  .product p{
+    font-size: 12px;
+  }
 
-   .flexy {
+  .flexy {
     display:flex;
     flex-direction: column; /* stack items */
     gap: 4rem;              /* smaller gap on mobile */
@@ -191,53 +192,69 @@ body {
   .secs span {
     margin-left: 0;  /* reset margin so prices don’t push too far */
   }
-.opps{
-  max-width: 100%;
-  border: 1px dotted white;
-} /* make separator responsive */
+
+  .opps{
+    max-width: 100%;
+    border: 1px dotted white;
+  } /* make separator responsive */
   
-.ourR{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .ourR{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mate{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hed h2{
+    font-size: 0.8rem;
+  }
+  .para p {
+    text-wrap: nowrap;
+    font-size: 3px;
+  }
+
+  #contacts{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: none;
+  }
+
+  ion-icon{
+    color:white;
+    font-size:1rem;
+  }
+
+  .circles, .circle{
+    display: none;
+  }
 }
 
-.mate{
-  display: flex;
-  flex-direction: column;
-}
-
-.hed h2{
-  font-size: 0.8rem;
-}
-.para p {
-  text-wrap: nowrap;
-  font-size: 3px;
-}
-
-#contacts{
-  display: flex;
-  flex-direction: column;
-}
-
-.icon {
-      width: 40px;
-      height: 40px;
-      border: 1px solid white;
-      border-radius: 50%;
-      background: none;
-    }
-
-    ion-icon{
-      color:white;
-      font-size:1rem;
-
-    }
-
-    .circles, .circle{
-      display: none;
-    }
+/* Extra small screens */
+@media screen and (max-width:480px) {
+  .lorem img {
+    width: 90%;
+    height: auto;
+  }
+  .det {
+    width: 95%;
+    height: auto;
+  }
+  .imh img{
+    width: 100%;
+    height: auto;
+  }
 }
 
 .is-flex{
@@ -246,13 +263,10 @@ body {
     justify-content: center;
 }
 
-
-
 .product{
   text-align: center;
   margin-top: 3rem;
 }
-
 
 .product h2{
   font-size: 2rem;
@@ -264,7 +278,6 @@ body {
   border: 1px solid white;
   opacity: 0.2;
 }
-
 
 .flexy{
   display: flex;
@@ -285,7 +298,6 @@ body {
   opacity: 0.2;
 }
 
-
 .secs span{
   margin-left: 19rem;
 }
@@ -300,7 +312,6 @@ body {
   gap: 7rem;
   margin-top: 8rem;
 }
-
 
 .looks {
   position: relative;
@@ -322,12 +333,10 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px;  /* needed to draw vertical side */
-  border: 1px dotted orangered;   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted orangered;
   pointer-events: none;
 }
-
-
 
 .looks:hover::before{
   border: 1px solid orange;
@@ -345,9 +354,9 @@ body {
 .looki img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .looki::before {
@@ -357,8 +366,8 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px; /* needed to draw vertical side */
-  border: 1px dotted orangered;   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted orangered;
   pointer-events: none;
 }
 
@@ -369,6 +378,7 @@ body {
   transition: all 0.7s;
   animation: drawBorder 3s linear forwards;
 }
+
 @keyframes drawBorder{
   0%{
     width: 0;
@@ -391,6 +401,7 @@ body {
     border-top-color: #3498db;
   }
 }
+
 .look3 h2{
   margin: 1em 4rem;
 }
@@ -406,9 +417,9 @@ body {
 .lockey img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .lockey::before {
@@ -418,12 +429,10 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px;  /* needed to draw vertical side */
-  border: 1px dotted orangered;   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted orangered;
   pointer-events: none;
 }
-
-
 
 .lockey:hover::before{
   border: 1px solid orange;
@@ -441,9 +450,9 @@ body {
 .locke img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .locke::before {
@@ -453,12 +462,10 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px;  /* needed to draw vertical side */
-  border: 1px dotted orangered;   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted orangered;
   pointer-events: none;
 }
-
-
 
 .locke:hover::before{
   border: 1px solid orange;
@@ -467,7 +474,6 @@ body {
   transition: all 0.7s;
   animation: drawBorder 3s linear backwards;
 }
-
 
 .master{
   margin-top: 4rem;
@@ -487,9 +493,6 @@ body {
   text-align: center;
 }
 
-
-
-
 .im4 {
   position: relative;
   display: inline-block;
@@ -498,9 +501,9 @@ body {
 .im4 img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .im4::before {
@@ -510,8 +513,8 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px; /* needed to draw vertical side */
-  border: 1px dotted rgb(248, 247, 247);   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
   pointer-events: none;
 }
 
@@ -523,10 +526,6 @@ body {
   animation: drawBorder 3s linear forwards;
 }
 
-
-
-
-
 .im3 {
   position: relative;
   display: inline-block;
@@ -535,9 +534,9 @@ body {
 .im3 img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .im3::before {
@@ -547,8 +546,8 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px; /* needed to draw vertical side */
-  border: 1px dotted rgb(248, 247, 247);   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
   pointer-events: none;
 }
 
@@ -560,9 +559,6 @@ body {
   animation: drawBorder 3s linear forwards;
 }
 
-
-
-
 .imh {
   position: relative;
   display: inline-block;
@@ -571,9 +567,9 @@ body {
 .imh img {
   display: block;
   cursor: pointer;
-  border: none; /* no border on image */
+  border: none;
   position: relative;
-  z-index: 1; /* keep image above pseudo-element */
+  z-index: 1;
 }
 
 .imh::before {
@@ -583,8 +579,8 @@ body {
   top: -15px;
   left: 15px;
   right: -15px;
-  bottom: 15px; /* needed to draw vertical side */
-  border: 1px dotted rgb(248, 247, 247);   /* top border */ /* left border */
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
   pointer-events: none;
 }
 
@@ -597,95 +593,91 @@ body {
 }
 
 .para {
-      display: none;
-      font-size: 1.2rem;
-    }
-    .para.active {
-      display: block;
-    }
-
-    /* Circle controls */
-    #container{
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 6rem;
-    }
-
-    .circles {
-    display: flex;
-    flex-direction: column;    /* stack circles vertically */
-    gap: 10px;                 /* space between circles */
+  display: none;
+  font-size: 1.2rem;
 }
-    .circle {
-      display: block;        /* stack vertically */
-      margin: 10px 3em;        /* vertical spacing */
-      position: relative;    /* keep ::before aligned */
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: gray;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .circle::before{
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border: 1px solid orange;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      opacity: 0.1;
-    }
-    .circle.active {
-      background:none;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      border: 1px solid orange;
-      position: relative;
-      transition: all 0.7s; /* active circle color */
-    }
+.para.active {
+  display: block;
+}
 
-    .icon {
-      width: 100px;
-      height: 100px;
-      border: 1px solid white;
-      border-radius: 50%;
-      background: none;
-      cursor: pointer;
-    }
+/* Circle controls */
+#container{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 6rem;
+}
 
-    ion-icon{
-      color:white;
-      font-size:2rem;
+.circles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.circle {
+  display: block;
+  margin: 10px 3em;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.circle::before{
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid orange;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+.circle.active {
+  background:none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid orange;
+  position: relative;
+  transition: all 0.7s;
+}
 
-    }
+.icon {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
 
+ion-icon{
+  color:white;
+  font-size:2rem;
+}
 
-    #contacts{
-      display: flex;
-      gap: 3rem;
-      margin-top: 3rem;
-      justify-content: center;
-    }
+#contacts{
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
 
-    .firstcon h2{
-        text-align: center;
-    }
+.firstcon h2{
+  text-align: center;
+}
 
-    .firstcon p{
-      margin: 1em 0;
-      text-align: center;
-    }
+.firstcon p{
+  margin: 1em 0;
+  text-align: center;
+}
 
-
-    #fut{
-      margin: 3rem 0;
-      text-align: center;
-    }
+#fut{
+  margin: 3rem 0;
+  text-align: center;
+}

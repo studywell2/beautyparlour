@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Website - Search Materials</title>
+</head>
+<body>
+  <h2>Search for Student Name</h2>
+
+  <!-- Search input -->
+  <input type="text" id="searchBox" placeholder="Press Enter to search...">
+
+  <!-- Message container -->
+  <p id="message" style="color: red; display: none;">No student found!</p>
+
+  <!-- Student list -->
+  <ul id="materialsList">
+    <li>John</li>
+    <li>Amaka</li>
+    <li>Blessing</li>
+    <li>Rahman</li>
+    <li>Dele</li>
+    <li>Adeyinka</li>
+    <li>Ibukun</li>
+    <li>Daniel</li>
+    <li>Joseph</li>
+  </ul>
+
+  <script>
+    let searchBox = document.getElementById("searchBox");
+    let materialsList = document.getElementById("materialsList");
+    let names = materialsList.getElementsByTagName("li");
+    let message = document.getElementById("message");
+
+    // Hide all items by default
+    for (let i = 0; i < names.length; i++) {
+      names[i].style.display = "none";
+    }
+
+    // Run search only when Enter is pressed
+    searchBox.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        let searchValue = searchBox.value.toLowerCase();
+        let found = false; // track if we find a match
+
+        for (let i = 0; i < names.length; i++) {
+          let text = names[i].textContent.toLowerCase();
+
+          if (searchValue !== "" && text.includes(searchValue)) {
+            names[i].style.display = "";  // show match
+            found = true;
+          } else {
+            names[i].style.display = "none";  // hide others
+          }
+        }
+
+        // Show or hide the "No student found" message
+        if (!found) {
+          message.style.display = "block";
+        } else {
+          message.style.display = "none";
+        }
+      }
+    });
+  </script>
+</body>
+</html>
