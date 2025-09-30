@@ -6,78 +6,43 @@
     <title>Document</title>
 </head>
 <body>
-     <form id="myForm">
-    <label>Email:</label>
-    <input type="text" id="email"><br><br>
-
-    <label>Password:</label>
-    <input type="password" id="password"><br><br>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <p id="error" style="color:red;"></p>
-        <h1 id="count">0</h1>
-        <button onclick="increase()">Increase</button>
-        <button onclick="decrease()">Decrease</button>
-        <button onclick="reset()">Reset</button>
-
-
-
-
-  <form action="zero.php" method="post">
-  <input type="text" name="email" placeholder="Your Email">
-  <textarea name="message" placeholder="Message"></textarea>
-  <button type="submit">Send</button>
-</form>
-
-
+    <h1>Counter app</h1>
+    <h2 id="Counter">0</h2>
+     <button id="increase">Increase</button>
+     <button id="decrease">decrease</button>
+     <button id="reset">Reset</button>
+     <button id="ColourChange">Click</button>
 </body>
 <script>
-    let count =0;
-    const countElement = document.getElementById('count');
+  let count = 0;
 
-    function increase(){
-        count++;
-        countElement.textContent =count;
-    }
+  let incRes = document.getElementById('increase');
+  let decrease = document.getElementById('decrease');
+  let reseT = document.getElementById('reset');
+  let counter = document.getElementById("Counter");
 
-    function decrease(){
-        count--;
-        countElement.textContent = count;
-    }
+  let colourCh = document.getElementById('ColourChange')
 
-    function reset(){
-        count = 0;
-        countElement.textContent = count;
-    }
+  incRes.addEventListener('click', ()=>{
+    count++;
+    counter.textContent = count;
+  })
 
 
+  decrease.addEventListener('click', ()=>{
+    count--;
+    counter.textContent = count;
+  })
 
+  reseT.addEventListener('click', ()=>{
+    count = 0;
+    counter.textContent = count;
+  })
 
-     const form = document.getElementById("myForm");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
-    const errorMsg = document.getElementById("error");
+ colourCh.addEventListener('click', () => {
+  let Redcol = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = Redcol; // use the variable, not the string
+});
 
-    form.addEventListener("submit", function(e) {
-      e.preventDefault(); // stop page reload
-      let errors = [];
-
-      if (email.value === "" || !email.value.includes("@")) {
-        errors.push("Enter a valid email");
-      }
-
-      if (password.value.length < 6) {
-        errors.push("Password must be at least 6 characters");
-      }
-
-      if (errors.length > 0) {
-        errorMsg.textContent = errors.join(", ");
-      } else {
-        errorMsg.textContent = "";
-        alert("Form submitted successfully!");
-      }
-    });
 </script>
 </html>

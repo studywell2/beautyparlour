@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "OlgViJb5ZgIyHVxD-",
+      });
+   })();
+</script>
+</head>
+<style>
+     input, select, button { display: block; margin: 10px 0; padding: 8px; font-size: 1rem; }
+</style>
+<body>
+   <h1>Sign Up page</h1>
+   <form action="" id="form">
+    <label for="">Email</label>
+    <input type="text" id="emails">
+    <p id="emailEr"></p>
+
+    <label for="">Password</label>
+    <input type="password" id="password">
+    <p id="passEr"></p>
+
+    <label for="">Confirm Password</label>
+    <input type="password" id="confirm">
+    <p id="confirEr"></p>
+
+    <h1>Select your country</h1>
+    <select name="" id="countr">
+        <option value="">-- Select Country --</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Togo">Togo</option>
+        <option value="Ghana">Ghana</option>
+        <option value="China">China</option>
+        <option value="India">India</option>
+        <option value="Zimbabwe">Zimbabwe</option>
+    </select>
+    <p id="countryEr"></p>
+    <button type="submit">Submit</button>
+   </form>
+   
+   <script>
+let form = document.getElementById("form");
+
+let email = document.getElementById('emails');
+let password = document.getElementById('password');
+let confirm = document.getElementById('confirm');
+let country = document.getElementById('countr');
+
+let emailEr = document.getElementById('emailEr');
+let passEr = document.getElementById('passEr');
+let confirEr = document.getElementById('confirEr');
+let countryEr = document.getElementById('countryEr');
+
+// EmailJS IDs
+let service = "service_jo82fzh";
+let template = "template_alv6k0n";
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let isValid = true;
+
+    // === Validation ===
+    if(email.value.trim() === ""){
+        emailEr.textContent = "Email cannot be empty";
+        isValid=false;
+    } else if(!email.value.includes("@") || !email.value.includes(".")){
+        emailEr.textContent = "Enter a valid email (must contain @ and .)";
+        isValid = false;
+    } else {
+        emailEr.textContent = "";
+    }
+
+    if(password.value.trim()===""){
+        passEr.textContent = "Password cannot be empty";
+        isValid = false;
+    } else if(password.value.trim().length < 8){
+        passEr.textContent="Password must be at least 8 characters";
+        isValid = false;
+    } else {
+        passEr.textContent = "";
+    }
+
+    if(confirm.value.trim()===""){
+        confirEr.textContent = "Please confirm your password";
+        isValid = false;
+    } else if(confirm.value !== password.value){
+        confirEr.textContent = "Passwords do not match";
+        isValid = false;
+    } else {
+        confirEr.textContent = "";
+    }
+
+    if(country.value === ""){
+        countryEr.textContent = "Please select a Country";
+        isValid = false;
+    } else {
+        countryEr.textContent = "";
+    }
+
+    // === If valid, send email ===
+    if(isValid){
+        let params = {
+            email: email.value,
+            password: password.value,
+            confirm: confirm.value,
+            country: country.value
+        };
+
+        emailjs.send(service, template, params)
+        .then(res => {
+            alert("✅ Form submitted & email sent successfully!");
+            form.reset();
+        })
+        .catch(err => {
+            console.error("❌ EmailJS Error:", err);
+            alert("❌ Failed to send email. Check console.");
+        });
+    }
+});
+</script>
+</body>
+</html>

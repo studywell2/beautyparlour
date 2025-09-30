@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    .Done {
+      text-decoration: underline;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+    <h1>My todo list</h1>
+    <input type="text" id="inputTask">
+    <button type="submit" id="TaskBtn">Submit</button>
+    <ul id="taskList"></ul>
+</body>
+
+<script>
+    let TaskBtn = document.getElementById('TaskBtn');
+    let inputTask =document.getElementById('inputTask');
+    let taskList = document.getElementById('taskList');
+
+    TaskBtn.addEventListener('click', function(){
+        let taskText = inputTask.value.trim();
+        if(taskText ==="")return;
+
+        let li = document.createElement("li");
+        li.textContent = taskText;
+
+        let completeB = document.createElement('button');
+        completeB.textContent = "Mark"
+        completeB.addEventListener('click',function(){
+          li.classList.toggle('Done');
+        });
+
+        let deleteB = document.createElement('button');
+        deleteB.textContent = "Remove";
+
+        deleteB.addEventListener('click', function(){
+            taskList.removeChild(li);
+        });
+
+        li.appendChild(completeB);
+        li.appendChild(deleteB);
+
+        taskList.appendChild(li);
+
+        inputTask.value = "";
+    });
+</script>
+</script>
+</html>

@@ -7,18 +7,35 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">
-    <h1></h1>
-    <button>Increase</button>
-    <button>Decrease</button>
-    <button>Reset</button>
-  </div>
+  <p lord>Lorem ipsum dolor sit amet.</p>
+  <button id="CLik">Clicked</button>
+  <p>ColourChange</p>
+  <button id="colorCHange">Change color</button>
 </body>
 
 <script>
-  new Vue({
-    el:'#app',
-    
+  let btn = document.getElementById('colorCHange');
+  btn.addEventListener('click', function(){
+    let redC = "#" + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = redC;
   })
+
+
+  let lor =document.getElementById('lord');
+  let bur = document.getElementById('Clik');
+
+   bur.addEventListener('click', () => {
+        // Use computed style so CSS-set display is respected
+        const isHidden = window.getComputedStyle(lor).display === 'none';
+
+        if (isHidden) {
+          lor.style.display = 'block';
+          bur.textContent = 'Hide lor';
+        } else {
+          lor.style.display = 'none';
+          bur.textContent = 'Show lor';
+        }
+      });
+
 </script>
 </html>

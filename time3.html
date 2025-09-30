@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Upadating Clock</h1>
+    <div id="Clock">00:00:00</div>
+    <div id="date"></div>
+</body>
+
+<script>
+    function updateTime(){
+        let now = new Date();
+        let hours = String(now.getHours()).padStart(2, "0");
+        let ampm = hours >= 12?  "am" : "pm";
+        hours = hours % 12;
+        hours = hours ? hours:12;
+
+        let minutes = String(now.getMinutes()).padStart(2, "0");
+        let seconds = String(now.getSeconds()).padStart(2, "0");
+
+        document.getElementById('Clock').textContent=
+        `${hours}:${minutes}:${seconds}:${ampm}`;
+
+        let date = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+        let dateS = now.toLocaleDateString("en-Us", date);
+        document.getElementById('date').textContent=dateS;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000)
+</script>
+</html>
