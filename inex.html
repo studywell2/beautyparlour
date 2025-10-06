@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Counter app</h1>
+    <h2 id="Counter">0</h2>
+     <button id="increase">Increase</button>
+     <button id="decrease">decrease</button>
+     <button id="reset">Reset</button>
+     <button id="ColourChange">Click</button>
+</body>
+<script>
+  let count = 0;
+
+  let incRes = document.getElementById('increase');
+  let decrease = document.getElementById('decrease');
+  let reseT = document.getElementById('reset');
+  let counter = document.getElementById("Counter");
+
+  let colourCh = document.getElementById('ColourChange')
+
+  incRes.addEventListener('click', ()=>{
+    count++;
+    counter.textContent = count;
+  })
+
+
+  decrease.addEventListener('click', ()=>{
+    count--;
+    counter.textContent = count;
+  })
+
+  reseT.addEventListener('click', ()=>{
+    count = 0;
+    counter.textContent = count;
+  })
+
+ colourCh.addEventListener('click', () => {
+  let Redcol = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = Redcol; // use the variable, not the string
+});
+
+</script>
+</html>

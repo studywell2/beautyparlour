@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beauty Parlour</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="dele.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="#" class="navbar-brand">
+          <img src="ythgg.jpg" alt="Logo" height="40">
+        </a>
+
+        <!-- Selects -->
+        <div class="select-country d-flex gap-3">
+          <!-- Language -->
+          <select class="work">
+            <option value="العربية">العربية</option>
+            <option value="日本語">日本語</option>
+            <option value="中文">中文</option>
+            <option value="Suomi">Suomi</option>
+            <option value="Français">Français</option>
+            <option value="Deusch">Deusch</option>
+            <option value="Nederlands">Nederlands</option>
+            <option value="Magyar">Magyar</option>
+            <option value="Italio">Italio</option>
+            <option value="Norsk">Norsk</option>
+            <option value="English" selected>English</option>
+            <option value="Espanol">Espanol</option>
+            <option value="Polski">Polski</option>
+            <option value="Română">Română</option>
+            <option value="Slovenščina">Slovenščina</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Portugais">Portugais</option>
+            <option value="Suédois">Suédois</option>
+            <option value="अंग्रेज़ी">अंग्रेज़ी</option>
+            <option value="Portugese">Portugese do Brasil</option>
+            <option value="Türkçe">Türkçe</option>
+            <option value="Русский">Русский</option>
+            <option value="Russe">Russe</option>
+          </select>
+
+          <!-- Currency -->
+          <select class="Naira">
+            <option value="NGN" selected>NGN</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="RON">RON</option>
+            <option value="TRY">TRY</option>
+            <option value="USSD">USSD</option>
+            <option disabled>-</option>
+            <!-- many other currency options kept as in your original file -->
+            <option value="ZAR">ZAR</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="payment">
+      <!-- Secure Checkout -->
+      <div class="secure">
+        <h3>Secure checkout</h3>
+      </div>
+
+      <!-- Visa Section -->
+      <div class="visa">
+        <img src="visa.png" alt="" width="40">
+        <img src="egbe.jpg" alt="" width="40">
+        <img src="express.png" alt="" width="40">
+        <img src="discover.PNG" alt="" width="40">
+      </div>
+
+      <!-- PayPal Section -->
+      <div class="paypal">
+        <h4>Pay<span>Pal</span></h4>
+      </div>
+
+      <!-- Other Payment Methods (Dropdown Style) -->
+      <div class="other">
+        <h3 id="stufr" class="stuf">
+          Other payment methods
+          <i class="bi bi-chevron-down text-dark fw-bold" style="cursor: pointer;"></i>
+        </h3>
+
+        <!-- Hidden dropdown -->
+        <div id="stuffer" class="pop">
+          <a href=""><i class="bi bi-bank"> Bank Transfer</i></a>
+          <a href=""><i class="bi bi-bank"> Mobile Money</i></a>
+          <a href=""><i class="bi bi-bank"> Crypto Payment</i></a>
+        </div>
+      </div>
+    </div>
+
+    <section id="ana">
+      <!-- .coins wraps the three main boxes (order summary, billing, card) -->
+      <div class="d-flex justify-content-center gap-3 coins">
+
+        <!-- Order summary -->
+        <div class="firstd p-2">
+          <h2 class="fw-lighter fs-5 my-2 text-dark text-uppercase">Order summary</h2>
+          <div class="d-flex forme my-4 gap-3 w-100 align-items-start">
+            <img src="ythgg.jpg" alt="" style="width: 80px;">
+            <div class="d-flex flex-column position-relative">
+              <small class="text-dark test fs-5">Mobirise <br>Extension <br> (Yearly)</small>
+              <div class="line love">
+                <p>MOBIRISE WEBSITE BUILDER</p>
+                <p>Create awesome mobile-friendly <br> websites. No coding and free.</p>
+              </div>
+              <small class="text-dark">[wellnessm5]</small>
+            </div>
+
+            <div class="left mx-5">
+              <a href="#"><i class="bi bi-trash3-fill" id="trashi" style="font-size: 1rem; cursor: pointer; color:gray;"></i></a> 1
+            </div>
+          </div>
+
+          <h4 class="text-end fs-6">72,775.94 ₦</h4>
+
+          <div class="opps my-4" style="border-bottom: 1px solid black; width: 378px;"></div>
+
+          <div class="d-flex gap-3 text-center">
+            <div class="place">
+              <small style="display: block;">Subtotal:</small>
+              <small style="display: block;">Total TAX/VAT :</small>
+              <h3>Total price:</h3>
+            </div>
+
+            <div class="place2 ms-auto">
+              <small style="display: block;">72,352.98 ₦</small>
+              <small style="display: block;">0.00 ₦</small>
+              <h3 style="font-size: 1em; position: relative; display: inline-block;">
+                72,352.98₦
+                <i class="bi bi-question-circle-fill text-primary fs-5 lane" style="cursor: pointer;" id="lane"></i>
+                <small class="line" style="font-size: 0.5em;">
+                  Changing your billing address may <br>
+                  affect the taxes applied <br>
+                  to your order.
+                </small>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- WRAP billing + card inside a single form to prevent layout bugs -->
+        <form id="formorder" class="d-flex gap-3 loper " novalidate>
+
+          <!-- Billing details -->
+          <div class="firstd ">
+            <h2 class="fs-5 text-uppercase" style="color: gray; margin-left: 1em; margin-top: 1rem;">Billing details</h2>
+
+            <div class="p-4">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="name" placeholder="Fullname">
+                <label for="name">Full name<sup>*</sup></label>
+                <p id="nameError" class="field-error text-danger small mt-1"></p>
+              </div>
+
+              <div class="form-floating mb-3 position-relative">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+                <label for="email">Email</label>
+                <p id="emailError" class="field-error text-danger small mt-1"></p>
+
+                <div class="help" tabindex="0" aria-hidden="false">
+                  <i class="bi bi-question-circle-fill text-primary"></i>
+                  <div class="help-tooltip" role="tooltip">
+                    By filling in your personal data you<br> agree that 2Checkout (now <br> Verifone), its affiliates and <br> partners can use it for order <br> related communications.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating mb-3 looh position-relative">
+                <input type="text" class="form-control hon" id="countryInput" placeholder="Country" readonly>
+                <label for="countryInput">Country<sup>*</sup> </label>
+
+                <!-- the fake dropdown -->
+                <div class="dropdown-box" id="dropdownBox" aria-hidden="true">
+                  <div class="dropdown-item">Nigeria</div>
+                  <div class="dropdown-item">Ghana</div>
+                  <div class="dropdown-item">Kenya</div>
+                  <div class="dropdown-item">South Africa</div>
+                  <div class="dropdown-item">Egypt</div>
+                  <div class="dropdown-item">Ethiopia</div>
+                  <div class="dropdown-item">Cameroon</div>
+                  <div class="dropdown-item">Morocco</div>
+                  <div class="dropdown-item">Senegal</div>
+                  <div class="dropdown-item">Uganda</div>
+                  <div class="dropdown-item">Tanzania</div>
+                  <div class="dropdown-item">Zimbabwe</div>
+                  <div class="dropdown-item">Zambia</div>
+                  <div class="dropdown-item">Botswana</div>
+                  <div class="dropdown-item">Namibia</div>
+                  <div class="dropdown-item">Rwanda</div>
+                  <div class="dropdown-item">Burundi</div>
+                  <div class="dropdown-item">Mali</div>
+                  <div class="dropdown-item">Niger</div>
+                  <div class="dropdown-item">Sudan</div>
+                  <div class="dropdown-item">Tunisia</div>
+                  <div class="dropdown-item">Algeria</div>
+                  <div class="dropdown-item">Chad</div>
+                  <div class="dropdown-item">Liberia</div>
+                  <div class="dropdown-item">Sierra Leone</div>
+                  <div class="dropdown-item">Ivory Coast</div>
+                  <div class="dropdown-item">Gambia</div>
+                  <div class="dropdown-item">Togo</div>
+                  <div class="dropdown-item">Benin</div>
+                  <div class="dropdown-item">Mauritius</div>
+                </div>
+
+                <p id="countryError" class="field-error text-danger small mt-1"></p>
+              </div>
+
+              <div class="form-floating mb-3 ade" id="addressField" style="display:none;">
+                <input type="text" class="form-control" id="address" placeholder="Fullname">
+                <label for="address">Address<sup>*</sup></label>
+                <p id="addressError" class="field-error text-danger small mt-1"></p>
+              </div>
+
+              <div class="check-list mb-2">
+                <input type="checkbox" id="address4"> I'm ordering for a company
+              </div>
+
+              <!-- companyField is kept inside the same .firstd so it won't move out -->
+              <div class="form-floating ade" id="companyField" style="display:none; margin-top: 1rem;">
+                <input type="text" class="form-control" id="companyName" placeholder="Fullname">
+                <label for="companyName">Company<sup>*</sup></label>
+                <p id="companyError" class="field-error text-danger small mt-1"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card details -->
+          <div class="firstd kort">
+            <h2 class="fs-5 text-uppercase" style="color: gray; margin-left: 1em; margin-top: 1rem;">CARD DETAILS</h2>
+
+            <div class="mistura" style="width:85%; overflow: visible; height: 300px; background-color: rgb(221, 218, 218); border-radius: 7px; align-items: center; margin-left: 1.5rem; padding: 25px;">
+              <div class="p-2">
+                <div class="form-floating mb-3 my-2">
+                  <input type="text" class="form-control" id="card" placeholder="Fullname">
+                  <label for="card">Card number<sup>*</sup></label>
+                  <p id="cardError" class="field-error text-danger small mt-1"></p>
+                </div>
+
+                <div class="d-flex gap-3">
+                  <div class="form-floating mb-3 cum" id="cum" style="position:relative;">
+                    <input type="text" class="form-control hon" id="monthInput" placeholder="Month" readonly style="min-width: 100px;">
+                    <label for="monthInput">Month<sup>*</sup></label>
+                    <div class="funny-box" id="funny-box" style="display:none; position:absolute; top:100%; left:0; width:200px; margin:5px; z-index:10; background:white; border:1px solid #ccc; border-radius:5px; max-height:150px; overflow-y:auto; padding:10px;">
+                      <div class="dropdown-month">01 (January)</div>
+                      <div class="dropdown-month">02 (February)</div>
+                      <div class="dropdown-month">03 (March)</div>
+                      <div class="dropdown-month">04 (April)</div>
+                      <div class="dropdown-month">05 (May)</div>
+                      <div class="dropdown-month">06 (June)</div>
+                      <div class="dropdown-month">07 (July)</div>
+                      <div class="dropdown-month">08 (August)</div>
+                      <div class="dropdown-month">09 (September)</div>
+                      <div class="dropdown-month">10 (October)</div>
+                      <div class="dropdown-month">11 (November)</div>
+                      <div class="dropdown-month">12 (December)</div>
+                    </div>
+                  </div>
+
+                  <div class="form-floating mb-3 Nin" id="Nin" style="position:relative;">
+                    <input type="text" class="form-control hon" id="yearInput" placeholder="Year" readonly style="min-width: 100px;">
+                    <label for="yearInput">Expiring Date<sup>*</sup></label>
+                    <div class="funny-box" id="funny-cut" style="display:none; position:absolute; top:100%; left:0; width:100px; margin:5px; z-index:10; background:white; border:1px solid #ccc; border-radius:5px; max-height:150px; overflow-y:auto; padding:10px;">
+                      <div class="dropdown-year">2025</div>
+                      <div class="dropdown-year">2026</div>
+                      <div class="dropdown-year">2027</div>
+                      <div class="dropdown-year">2028</div>
+                      <div class="dropdown-year">2029</div>
+                      <div class="dropdown-year">2030</div>
+                      <div class="dropdown-year">2031</div>
+                      <div class="dropdown-year">2032</div>
+                      <div class="dropdown-year">2033</div>
+                      <div class="dropdown-year">2034</div>
+                      <div class="dropdown-year">2035</div>
+                      <div class="dropdown-year">2036</div>
+                      <div class="dropdown-year">2037</div>
+                      <div class="dropdown-year">2038</div>
+                      <div class="dropdown-year">2039</div>
+                      <div class="dropdown-year">2040</div>
+                      <div class="dropdown-year">2041</div>
+                      <div class="dropdown-year">2042</div>
+                      <div class="dropdown-year">2043</div>
+                      <div class="dropdown-year">2044</div>
+                      <div class="dropdown-year">2045</div>
+                      <div class="dropdown-year">2046</div>
+                      <div class="dropdown-year">2047</div>
+                      <div class="dropdown-year">2048</div>
+                      <div class="dropdown-year">2049</div>
+                      <div class="dropdown-year">2050</div>
+                      <div class="dropdown-year">2051</div>
+                      <div class="dropdown-year">2052</div>
+                      <div class="dropdown-year">2053</div>
+                      <div class="dropdown-year">2054</div>
+                      <div class="dropdown-year">2055</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3 position-relative mt-3">
+                  <input type="text" class="form-control pe-5" id="security" placeholder="Security">
+                  <label for="security">Security Code</label>
+                  <div class="help clear position-absolute top-50 end-0 translate-middle-y me-2" style="cursor:pointer;">
+                    <i class="bi bi-question-circle-fill text-primary color"></i>
+                    <div class="stop">
+                      <img src="stopt it.png" alt="" class="img-fluid w-75">
+                      <h4 style="font-size:0.5em; margin-top:1em;">3 digits on the back of your card</h4>
+                    </div>
+                  </div>
+                  <p id="securityError" class="field-error text-danger small mt-1"></p>
+                </div>
+
+                <p class="text-center my-2 privacy" style="font-size: 0.6em;">By placing this order you agree to the <a href="https://www.2co.com/terms.html?MOR=active">Terms and Conditions</a></p>
+
+                <div class="text-center">
+                  <button type="submit" id="placeorder" class="btn btn-success w-75 text-center mx-5 my-3 fw-bold text-white">Place Order</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- Footer-like Info -->
+      <div class="d-flex lastm" style="background-color: rgb(223, 221, 221); padding: 10px;">
+        <div class="d-block loper">
+          <div class="d-flex gap-2 mx-5 text-decoration-underline under">
+            <a href="#"><small class="lope">Privacy policy</small></a>
+            <div class="lone" style="width: 5px; border-left: 1px solid black;"></div>
+            <a href="#"><small class="lope">Terms and Conditions</small></a>
+            <div class="lone" style="width: 5px; border-left: 1px solid black;"></div>
+            <a href="#"><small class="lope">Refund policy</small></a>
+            <div class="lone" style="width: 5px; border-left: 1px solid black;"></div>
+            <a href="#"><small class="lope">Rigth of withdrawal</small></a>
+          </div>
+          <p class="mx-5 my-3" style="font-size: 0.7em;">Order processed by 2Checkout, authorized reseller and merchant of the products and services offered within this <br>store. Verifone Payments BV dba 2Checkout | [Mail address: P.O. Box 11334, 1001 GH Amsterdam] Singel 250, 4th <br>floor, 1016AB, Amsterdam, Netherlands</p>
+        </div>
+
+        <div class="d-block ms-auto">
+          <p style="margin-left: 9rem;">Customer Support</p>
+          <small style="display: block; margin-left: 9rem;">‎+31 88 000 0008 (International)</small>
+          <small style="display: block;">24/7 English phone support for online payment related issues.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="dele.js"></script>
+</body>
+</html>

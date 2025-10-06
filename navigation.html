@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Hamburger Menu with Cancel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .love{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 70px;
+        background-color: orangered;
+    }
+
+    h3 {
+      margin: 10px;
+    }
+
+    nav {
+      position: relative;
+    }
+
+    /* Hamburger button */
+    .hamburger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 24px;
+    }
+
+    /* Hamburger bars */
+    .hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 4px;
+      background: black;
+    }
+
+    /* Menu styles */
+    nav ul {
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    nav ul.showMenu {
+      display: block;
+    }
+
+    nav ul li {
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="love">
+    <h3>{{ logo }}</h3>
+
+    <nav :class="{ 'nav-open': isOpen }">
+      <!-- Hamburger shown when menu is closed -->
+      <button v-if="!isOpen" @click="toggleMenu" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Cancel button shown when menu is open -->
+      <button v-else @click="toggleMenu" class="hamburger">✖</button>
+
+      <!-- Navigation menu -->
+      <ul :class="{ 'showMenu': isOpen }">
+        <li><a href="">About</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </div>  
+
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          logo: 'CodeZone',
+          isOpen: false,
+        }
+      },
+      methods: {
+        toggleMenu() {
+          this.isOpen = !this.isOpen;
+        },
+      },
+    })
+  </script>
+</body>
+</html>

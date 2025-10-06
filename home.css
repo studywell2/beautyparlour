@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: black !important;
+    overflow-y: auto;
+}
+
+.navbar-toggler{
+background-image: none;
+}
+
+.toggler-icon{
+    display: block;
+    background-color: white;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn.nav-link{
+    cursor: pointer;
+    padding: 5px;
+    font-size: 2rem;
+}
+
+.collapse.show{
+    display: block;
+}
+
+.cancel{
+    display: none;
+    font-size:2rem ;
+    line-height: 1;
+    color: white;
+}
+
+.navbar-toggler.hide .toggler-icon{
+    display: none;
+}
+
+.navbar-toggler.hide .cancel {
+  display: block;
+}
+
+.buy-btn{
+    font-size: 1.2rem;
+}
+
+
+.d-flex{
+    margin-top: 8rem;
+    gap: 2rem;
+}
+
+.btn.btn-top{
+    width: 250px;
+    height: 60px;
+    border: 2px dotted orange;
+    transition: border-color 0.3s ease-in-out, transform 0.3s  ease-in-out;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin:0.8rem;
+}
+
+.btn.btn-top:hover{
+    border-color: coral;
+    transform: translate(5px,);
+}
+
+.btn.btn-top::before{
+    content: "";
+    position:absolute;
+    top: -5px;
+    left: 4px;
+    border: 2px solid gray;
+    width: 240px;
+    height: 69px;
+    border-radius: 4px;
+    z-index:-1;
+}
+.but-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+.buyr-go{
+    position: relative;
+    overflow: hidden;
+}
+
+.buyr-go img{
+     transition: transform 0.5s ease;
+}
+
+.buyr-go::after{
+      content: "";
+      position: absolute;
+      inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+      background: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+}
+
+.buyr-go:hover::after{
+    opacity: 1;
+}
+
+.buyr-go:hover img{
+     transform: scale(1.1);
+}
+
+.circle-video {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  position: absolute;
+  left: 40%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  overflow-y: hidden; /* so iframe stays inside */
+}
+
+
+.circle-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (max-width: 768px){
+     .buy-btn {
+     display: block;
+     margin: 0 8rem;   /* center horizontally */
+     font-size: 1rem;     /* smaller text */
+  }
+  .d-flex{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .but-flex{
+    align-items: center;
+  }
+.buyr-go {
+    display: flex;
+    align-items: center;
+}
+.circle-video {
+    width: 150px;
+    height: 150px;  /* adjust for tablets */
+    left: 35%;
+  }
+
+  #Video{
+    font-size: 1em;
+    text-wrap: nowrap;
+  }
+
+.colap-you{
+    max-width: 100%;
+}
+}

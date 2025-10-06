@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <table border="1" cellspacing="0" cellpadding="5">
+      <thead>
+        <tr>
+            <th>id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="(friend, index) in friends" :key="friend.username">
+            <td>{{index + 1}}</td>
+          <td>{{ friend.name }}</td>
+          <td>{{ friend.username }}</td>
+          <td>
+            <a v-bind:href="'https://www.twitter.com/' + friend.username" target="_blank">
+              @{{ friend.username }}
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data () {
+        return {
+          friends: [
+            { name: 'Even you', username: 'youghort' },
+            { name: 'Welcome', username: 'Ordered' },
+            { name: 'Alice', username: 'alice123' },
+            { name: 'Alice', username: 'alice123' },
+            { name: 'Alice', username: 'alice123' },
+            { name: 'Alice', username: 'alice123' },
+            { name: 'Bob', username: 'bob_the_builder' },
+            { name: 'Bob', username: 'bob_the_builder' },
+            { name: 'Bob', username: 'bob_the_builder' }
+          ]
+        }
+      }
+    });
+  </script>
+</body>
+</html>

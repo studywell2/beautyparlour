@@ -1,0 +1,680 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  font-family: "Share Tech", sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Hero Section */
+.wrap {
+  max-width: 100%;
+  height: 600px;
+  background: url(hjk.jpeg) center/cover no-repeat;
+  filter: saturate(2.5), contrast(1.5);
+  background-attachment: fixed;
+}
+
+/* Navbar container */
+.parlour {
+  width: 100%;
+  top: 0;
+  background-color: black;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* Navbar Brand (fixed top bar if you want) */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Navbar Items */
+.navbar-menu a {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  transition: 0.3s ease-in;
+}
+
+.navbar-menu a:hover {
+  color: yellow;
+  text-decoration: underline;
+  transform: translateX(5px);
+}
+
+/* Hero Title */
+.title {
+  color: white;
+  text-align: center;
+  position: relative;
+  bottom: -50%;
+  font-family: "Rowdies", sans-serif;
+}
+
+/* Divider Line */
+.line {
+  border-left: 1px solid white;
+  height: 100px;
+}
+
+/* Info Section */
+.lorem {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 7rem;
+}
+
+.lorem img {
+  max-width: 550px;
+  height: auto;
+}
+
+.det {
+  border: 1px dotted white;
+  width: 500px;
+  height: 400px;
+  padding: 1rem;
+}
+
+.det >h2{
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    margin-left: 2rem;
+}
+
+.det>p{
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+/* Button */
+.det > button {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  margin-left: 2rem;
+  padding: 12px 30px;
+  color: white;
+  border: 1px solid white;
+  background: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+  width: 140px;
+}
+.det > button::after{
+    position: absolute;
+    top: 4px;
+    left: -5px;
+    right: 4px;
+    bottom: 4px;
+    content: "";
+    border: 1px solid white;
+    width: 150px;
+    transition: 0.4s ease-in;
+    
+}
+
+.det > button:hover::after{
+    border: 1px dotted rgb(255, 115, 0);
+    border-radius: 2px;
+}
+
+/* ========== MOBILE STYLES ========== */
+@media screen and (max-width: 1023px) {
+  /* Navbar menu drops down in column */
+  #mainNav.is-active {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #111;
+  }
+
+  #mainNav .navbar-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #mainNav .navbar-item {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+}
+
+/* Smaller screen wrap size */
+@media screen and (max-width: 768px) {
+  .wrap { height: 250px; }
+  .title { font-size: 1rem; }
+  .lorem { 
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .lorem img{
+    width: 300px;
+    height: auto;
+  }
+  .lorem .det{
+    width:300px;
+    height: auto;
+  }
+
+  .product p{
+    font-size: 12px;
+  }
+
+  .flexy {
+    display:flex;
+    flex-direction: column; /* stack items */
+    gap: 4rem;              /* smaller gap on mobile */
+    margin: 1em;            /* reduce margin for small screens */
+  }
+
+  .firsr span,
+  .secs span {
+    margin-left: 0;  /* reset margin so prices don’t push too far */
+  }
+
+  .opps{
+    max-width: 100%;
+    border: 1px dotted white;
+  } /* make separator responsive */
+  
+  .ourR{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mate{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hed h2{
+    font-size: 0.8rem;
+  }
+  .para p {
+    text-wrap: nowrap;
+    font-size: 3px;
+  }
+
+  #contacts{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background: none;
+  }
+
+  ion-icon{
+    color:white;
+    font-size:1rem;
+  }
+
+  .circles, .circle{
+    display: none;
+  }
+}
+
+/* Extra small screens */
+@media screen and (max-width:480px) {
+  .lorem img {
+    width: 90%;
+    height: auto;
+  }
+  .det {
+    width: 95%;
+    height: auto;
+  }
+    
+}
+
+.is-flex{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.product{
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.product h2{
+  font-size: 2rem;
+}
+
+.inline{
+  width: 100%;
+  margin-top: 1em;
+  border: 1px solid white;
+  opacity: 0.2;
+}
+
+.flexy{
+  display: flex;
+  justify-content:center;
+  gap: 4rem;
+  margin: 2rem 4rem;
+}
+.firsr span{
+  margin-left: 19rem;
+}
+
+.firsr small{
+  color: gray;
+}
+.opps{
+  width: 400px;
+  border: 1px dotted white;
+  opacity: 0.2;
+}
+
+.secs span{
+  margin-left: 19rem;
+}
+
+.secs small{
+  color: gray;
+}
+
+.ourR{
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  margin-top: 8rem;
+}
+
+.looks {
+  position: relative;
+  display: inline-block;
+}
+
+.looks img {
+  display: block;
+  cursor: pointer;
+  border: none; /* no border on image */
+  position: relative;
+  z-index: 1; /* keep image above pseudo-element */
+}
+
+.looks::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted orangered;
+  pointer-events: none;
+}
+
+.looks:hover::before{
+  border: 1px solid orange;
+  transform-origin: right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear backwards;
+}
+
+.looki {
+  position: relative;
+  display: inline-block;
+}
+
+.looki img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.looki::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted orangered;
+  pointer-events: none;
+}
+
+.looki:hover::before{
+  border: 1px solid orange;
+  transform-origin: bottom right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear forwards;
+}
+
+@keyframes drawBorder{
+  0%{
+    width: 0;
+    height: 0;
+    border-bottom-color: #3498db;
+  }
+  33% {
+    width: 100%;
+    height: 0;
+    border-bottom-color: #3498db;
+  }
+  66% {
+    width: 100%;
+    height: 100%;
+    border-right-color: #3498db;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: #3498db;
+  }
+}
+
+.look3 h2{
+  margin: 1em 4rem;
+}
+
+.locky{
+  margin-top: 2rem;
+}
+.lockey {
+  position: relative;
+  display: inline-block;
+}
+
+.lockey img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.lockey::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted orangered;
+  pointer-events: none;
+}
+
+.lockey:hover::before{
+  border: 1px solid orange;
+  transform-origin: right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear backwards;
+}
+
+.locke {
+  position: relative;
+  display: inline-block;
+}
+
+.locke img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.locke::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted orangered;
+  pointer-events: none;
+}
+
+.locke:hover::before{
+  border: 1px solid orange;
+  transform-origin: right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear backwards;
+}
+
+.master{
+  margin-top: 4rem;
+}
+
+.hed{
+  margin: 0 9rem;
+  font-size: 2.5rem;
+  font-style: oblique;
+  color: white;
+}
+
+.mate{
+  display: flex;
+  margin: 1.5rem 8rem;
+  gap: 3rem;
+  text-align: center;
+}
+
+.im4 {
+  position: relative;
+  display: inline-block;
+}
+
+.im4 img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.im4::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
+  pointer-events: none;
+}
+
+.im4:hover::before{
+  border: 1px solid orange;
+  transform-origin: bottom right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear forwards;
+}
+
+.im3 {
+  position: relative;
+  display: inline-block;
+}
+
+.im3 img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.im3::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
+  pointer-events: none;
+}
+
+.im3:hover::before{
+  border: 1px solid orange;
+  transform-origin: bottom right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear forwards;
+}
+
+.imh {
+  position: relative;
+  display: inline-block;
+}
+
+.imh img {
+  display: block;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.imh::before {
+  content: "";
+  position: absolute;
+  cursor: pointer;
+  top: -15px;
+  left: 15px;
+  right: -15px;
+  bottom: 15px;
+  border: 1px dotted rgb(248, 247, 247);
+  pointer-events: none;
+}
+
+.imh:hover::before{
+  border: 1px solid orange;
+  transform-origin: bottom right top;
+  transform: scale3d(0, 1);
+  transition: all 0.7s;
+  animation: drawBorder 3s linear forwards;
+}
+
+.para {
+  display: none;
+  font-size: 1.2rem;
+}
+.para.active {
+  display: block;
+}
+
+/* Circle controls */
+#container{
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.circles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.circle {
+  display: block;
+  margin: 10px 3em;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: gray;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.circle::before{
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid orange;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+.circle.active {
+  background:none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid orange;
+  position: relative;
+  transition: all 0.7s;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+ion-icon{
+  color:white;
+  font-size:2rem;
+}
+
+#contacts{
+  display: flex;
+  gap: 3rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.firstcon h2{
+  text-align: center;
+}
+
+.firstcon p{
+  margin: 1em 0;
+  text-align: center;
+}
+
+#fut{
+  margin: 3rem 0;
+  text-align: center;
+}

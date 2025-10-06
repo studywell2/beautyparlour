@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+  .sor{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+
+  .hamburger{
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .hamburge{
+    width: 200px;
+    display: none ;
+    flex-direction: column;
+    padding: 10px;
+    gap: 15px;
+    text-align: center;
+    margin-left: 60rem;
+  }
+
+  .hamburge li{
+    list-style: none;
+  }
+
+  .hamburge a{
+    background: #f34;
+    color: white;
+    margin: 10px 0;
+    text-decoration: none;
+    padding: 5px;
+    
+  }
+  .show{
+    display: flex;
+  }
+
+  .hide{
+    display: none;
+  }
+</style>
+<body>
+    <div class="sor">
+        <h1>Codezone</h1>
+         <span class="hamburger" id="menuBtn">☰</span>
+    </div>
+
+    <div class="hamburge" id="nav-links">
+        <button id="Cancel" style="font-size: 1.3rem; padding: 5px;">Cancel</button>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Blogs</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Services</a></li>
+    </div>
+
+    <form action="" id="form" style="margin-top: 4rem;">
+        <label for="">Username</label>
+        <input type="text" id="Username">
+        <button type="submit">Submit</button>
+        <p id="please"></p>
+    </form>
+</body>
+
+<script>
+    let menuBtn = document.getElementById('menuBtn');
+    let navLinks = document.getElementById('nav-links');
+    let Cancel = document.getElementById('Cancel');
+
+    menuBtn.addEventListener('click', ()=>{
+        navLinks.classList.toggle('show')
+    })
+
+    Cancel.addEventListener('click', ()=>{
+        navLinks.classList.toggle('hide')
+    })
+
+
+    let form = document.getElementById('form');
+    let username = document.getElementById('Username');
+    let please = document.getElementById('please');
+
+    form.addEventListener('submit', (event)=>{
+        event.preventDefault();
+
+        if(username.value.trim() ===""){
+            please.textContent = "Username cannot be empty!";
+        }else{
+            please.textContent = "";
+            alert("Form submitted successfully ✅")
+        }
+    })
+</script>
+</html>

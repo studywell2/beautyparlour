@@ -1,0 +1,232 @@
+/* base reset and core */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+/* Select styling */
+.select-country select {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 30px 5px 10px;
+  cursor: pointer;
+  background-image:
+    linear-gradient(#ccc, #ccc),
+    url("data:image/svg+xml;utf8,<svg fill='black' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 25px center, right 5px center;
+  background-size: 1px 60%, 16px;
+}
+.select-country select:focus {
+  border: 1px solid blue;
+  border-radius: 4px;
+}
+
+/* Payment section */
+.payment {
+  position: relative;
+  margin-top: 8rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Visa box */
+.visa {
+  border: 3px solid rgb(7, 5, 138);
+  width: 250px;
+  box-shadow: 1px 1px 1px black;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.visa:hover { border: 4px solid orange; }
+
+/* Paypal box */
+.paypal {
+  width: 100px;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+  text-align: center;
+  cursor: pointer;
+}
+.paypal:hover { border: 1px solid red; }
+.paypal h4 { font-size: 1em; margin-top: 0.7em; }
+.paypal span { color: blue; font-weight: bold; }
+
+/* Other payment methods container */
+.other { position: relative; }
+
+/* The clickable heading */
+.stuf {
+  font-size: 1em;
+  background-color: white;
+  box-shadow: 2px 2px 2px black;
+  padding: 6px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hidden dropdown menu */
+.pop {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 15px;
+  z-index: 10;
+  flex-direction: column;
+  text-align: center;
+}
+.pop a { text-decoration: none; color:black; margin: 4px; border-radius: 4px; }
+.pop.show { display: flex; }
+
+/* layout boxes */
+.coins {
+  margin: 2rem 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* critical fix: make .firstd flexible, allow content to expand (prevents "moving out" issue) */
+.firstd {
+  width: 400px;
+  min-height: 470px; /* allow expansion */
+  background-color: white;
+  box-shadow: 0 0 5px black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  position: relative;
+}
+
+/* small helper boxes */
+.line {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 0 4px black;
+  z-index: 10;
+}
+.love {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 250px;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 0 4px black;
+}
+
+/* help tooltip */
+.help { position: absolute; right: 12px; top: 12px; display: inline-block; z-index: 9999; }
+.help i { cursor: pointer; display:inline-block; }
+.help-tooltip {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  width: 220px; background: #fff; border-radius: 6px; padding: 8px 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  visibility: hidden; opacity: 0; transform: translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+  pointer-events: none;
+}
+.help:hover .help-tooltip, .help:focus-within .help-tooltip {
+  visibility: visible; opacity: 1; transform: translateY(0); transition-delay: 0s; pointer-events: auto;
+}
+
+/* arrows on inputs */
+.looh::after, .cum::after, .Nin::after {
+  content: "\f229";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  pointer-events: none;
+  font-size: 0.9rem;
+}
+.looh { position: relative; cursor: pointer; }
+.cum { position: relative; cursor: pointer; }
+.Nin { position: relative; cursor: pointer; }
+
+/* dropdown-box inside country */
+.dropdown-box {
+  position: absolute; top: 100%; left: 0; width: 100%;
+  background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border-radius: 5px;
+  z-index: 10; display: none; max-height:300px; overflow-y: auto;
+}
+.dropdown-box.show { display: block; }
+.dropdown-box .dropdown-item { padding: 8px 12px; cursor: pointer; }
+.dropdown-box .dropdown-item:hover { background-color: #f8f9fa; }
+
+/* hidden by default; shown by JS by setting style.display or class */
+.ade { display: none; }
+
+/* stop/help bubble */
+.stop { display: none; position: absolute; width: 150px; background-color: white; box-shadow: 0 0 4px black; padding: 10px; border-radius: 4px; text-align: center; }
+.clear:hover .stop { display: block; }
+
+/* footer links */
+.lope { color: black; }
+.lope:hover { color: blue; }
+
+/* small helper for errors */
+.field-error { min-height: 1em; display: block; }
+
+/* Responsive - mobile: stack the three main boxes vertically as block-like */
+@media (max-width: 768px) {
+  .select-country select { display: none; }
+  .payment { flex-direction: column; align-items: center; gap: 2rem; }
+  .coins {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .coins .firstd {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0; /* let each box size to content on mobile */
+  }
+  .opps { display:none; }
+  .lastm { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+  .under { display: flex; flex-direction: column; text-decoration: none; }
+  .privacy p { font-size: 0.6em; white-space: nowrap; }
+
+  .loper{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .kort{
+    height: 500px;
+  }
+}

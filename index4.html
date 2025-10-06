@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  <p lord>Lorem ipsum dolor sit amet.</p>
+  <button id="CLik">Clicked</button>
+  <p>ColourChange</p>
+  <button id="colorCHange">Change color</button>
+</body>
+
+<script>
+  let btn = document.getElementById('colorCHange');
+  btn.addEventListener('click', function(){
+    let redC = "#" + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = redC;
+  })
+
+
+  let lor =document.getElementById('lord');
+  let bur = document.getElementById('Clik');
+
+   bur.addEventListener('click', () => {
+        // Use computed style so CSS-set display is respected
+        const isHidden = window.getComputedStyle(lor).display === 'none';
+
+        if (isHidden) {
+          lor.style.display = 'block';
+          bur.textContent = 'Hide lor';
+        } else {
+          lor.style.display = 'none';
+          bur.textContent = 'Show lor';
+        }
+      });
+
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="word">
+        <label for="">Username</label>
+        <input type="text" id="username">
+        <p id="userEr"></p>
+
+        <label for="">Password</label>
+        <input type="password" id="Password">
+        <p id="passEr"></p>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+<script>
+    let word = document.getElementById('word');
+    let username = document.getElementById('username');
+    let userError = document.getElementById('userEr');
+
+    let password = document.getElementById('Password');
+    let passEr = document.getElementById('passEr');
+
+    word.addEventListener('submit', function(e){
+      e.preventDefault();
+      
+      let isValid =true;
+
+      if(username.value.trim()===""){
+        userError.textContent = "Username cannot be empty";
+        isValid = false;
+      } else if(username.value.trim().length <5){
+        userError.textContent = "Username must be at least 5 characters";
+        userError.style.color = 'red';
+        isValid = false;
+      } else{
+        username.textContent = "";
+      }
+
+     if(password.value.trim() ===""){
+        passEr.textContent = "Password cannot be empty";
+        isValid = false;
+     } else if(password.value.trim().length <7){
+        passEr.textContent = "Password must be at least 7 characters";
+        isValid = false;
+    } else{
+        passEr.textContent = "";
+    }
+    }) 
+</script>
+</html>
